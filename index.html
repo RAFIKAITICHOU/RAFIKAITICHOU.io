@@ -1,93 +1,542 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafik Ait Ichou - Portfolio</title>
+    <link rel="icon" type="image/png" href="logoo.jpg" />
+    <title>AIT ICHOU Rafik - Portfolio</title>
+    <meta name="keywords"
+        content="Rafik Ait Ichou, ingénieur informatique, cybersécurité, développement web, portfolio, EMSI, développeur Laravel, Python, Data Science, Machine Learning, Réseaux, Sécurité informatique, DevOps, Docker">
+    <meta name="description"
+        content="Portfolio de AIT ICHOU Rafik, étudiant ingénieur en informatique à l'EMSI, spécialisé en cybersécurité, développement web, data science et systèmes intelligents.">
+    <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio - AIT ICHOU Rafik">
+    <meta property="og:description"
+        content="Étudiant ingénieur en informatique et réseaux | Développement | Cybersécurité.">
+    <meta property="og:image" content="photo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-site.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AIT ICHOU Rafik - Portfolio">
+    <meta name="twitter:description" content="Ingénierie informatique | Développement web | Cybersécurité">
+    <meta name="twitter:image" content="photo.jpeg">
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0d1117;
-            color: #e6edf3;
-            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
         }
-        header {
-            padding: 50px 20px;
+
+        :root {
+            --primary-dark: #0a0e27;
+            --secondary-dark: #1a1f3a;
+            --accent-blue: #00d4ff;
+            --accent-cyan: #0099ff;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
         }
-        h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
+
+        html {
+            scroll-behavior: smooth;
         }
-        h2 {
-            font-weight: 300;
-            color: #58a6ff;
-        }
-        p {
-            font-size: 18px;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            color: var(--text-primary);
             line-height: 1.6;
-            max-width: 700px;
-            margin: 20px auto;
+            overflow-x: hidden;
         }
-        .section {
-            padding: 40px 20px;
-            border-top: 1px solid #30363d;
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        a {
-            color: #58a6ff;
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
         }
-        .skills span {
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* HEADER HERO */
+        header {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 153, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            margin-bottom: 2rem;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3), inset 0 0 40px rgba(0, 212, 255, 0.1);
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        .headline {
+            color: var(--accent-blue);
+            font-weight: 600;
+            animation: slideUp 0.8s ease-out 0.4s both;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-content strong {
+            color: var(--text-primary);
+        }
+
+        /* SKILLS & CERTIFICATIONS */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
             display: inline-block;
-            padding: 8px 15px;
-            margin: 5px;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 20px;
+            padding: 0.7rem 1.2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 255, 0.05) 100%);
+            border: 1px solid var(--accent-blue);
+            border-radius: 25px;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tag:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 153, 255, 0.15) 100%);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* LINKS */
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a:hover {
+            color: var(--accent-cyan);
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-cyan);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: rgba(26, 31, 58, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 212, 255, 0.05);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-link {
+            font-size: 1rem;
+            color: var(--accent-blue);
+            word-break: break-all;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 212, 255, 0.05) 100%);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-divider {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+            margin: 2rem auto;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 4rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-logo">RA</div>
+        <ul class="nav-links">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<header>
-    <h1>Rafik Ait Ichou</h1>
-    <h2>Étudiant en Ingénierie Informatique | Cybersécurité & Développement</h2>
-</header>
+    <!-- HEADER HERO -->
+    <header>
+        <img src="photo.jpeg" alt="Photo de profil Rafik AIT ICHOU" class="profile-pic">
+        <h1>AIT ICHOU Rafik</h1>
+        <p class="subtitle">Étudiant en Ingénierie Informatique et Réseaux</p>
+        <p class="headline">Cybersécurité & Développement</p>
+    </header>
 
-<section class="section">
-    <h2>👨‍💻 À propos</h2>
-    <p>
-        Passionné par l'informatique, les systèmes intelligents, la cybersécurité et le développement logiciel.
-        Je crée, j’apprends et j’améliore mes compétences chaque jour.
-    </p>
-</section>
+    <!-- À PROPOS -->
+    <section class="section" id="about">
+        <h2 class="section-title">👨‍💻 À propos</h2>
+        <div class="section-content">
+            <p>
+                Étudiant en 4ᵉ année cycle d'ingénieur en informatique et réseaux à l'EMSI,
+                option <strong>Développement Digital & Systèmes d'Information</strong>.
+            </p>
+            <p>
+                Passionné par le développement logiciel, la cybersécurité, les systèmes intelligents
+                et l'ingénierie informatique. Curieux et motivé, j'améliore mes compétences chaque jour
+                à travers des projets, formations et challenges techniques.
+            </p>
+        </div>
+    </section>
 
-<section class="section">
-    <h2>⚙️ Compétences</h2>
-    <div class="skills">
-        <span>Laravel</span>
-        <span>PHP</span>
-        <span>Java</span>
-        <span>Docker</span>
-        <span>MySQL</span>
-        <span>Python</span>
-        <span>Linux</span>
-        <span>Network & Security</span>
-    </div>
-</section>
+    <!-- FORMATION -->
+    <section class="section" id="formation">
+        <h2 class="section-title">🎓 Formation</h2>
+        <div class="section-content">
+            <p>
+                • <strong>Cycle d'ingénieur en Informatique & Réseaux</strong> – EMSI (Bac +5)<br />
+                • <strong>Licence en Informatique</strong><br />
+                • <strong>Baccalauréat Sciences Physiques</strong>
+            </p>
+        </div>
+    </section>
 
-<section class="section">
-    <h2>📫 Me contacter</h2>
-    <p>
-        Email : <a href="mailto:rafikaitichou@gmail.com">rafikaitichou@gmail.com</a><br>
-        GitHub : <a href="https://github.com/RAFIKAITICHOU" target="_blank">github.com/RAFIKAITICHOU</a>
-        Linkedin : <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank">Linkedin/rafik-ait-ichou</a>
-    </p>
-</section>
+    <!-- CERTIFICATIONS -->
+    <section class="section">
+        <h2 class="section-title">📜 Certifications</h2>
+        <div class="tags-container">
+            <span class="tag">IBM – Python</span>
+            <span class="tag">IBM – Data Science</span>
+            <span class="tag">IBM – Machine Learning</span>
+            <span class="tag">IBM – Deep Learning</span>
+        </div>
+    </section>
+
+    <!-- EXPÉRIENCE -->
+    <section class="section">
+        <h2 class="section-title">💼 Expérience</h2>
+        <div class="section-content">
+            <p>
+                <strong>Professeur stagiaire en informatique (2022 – 2025)</strong><br />
+                • Assistance, animation et gestion de classes en informatique<br />
+                • Encadrement des étudiants dans les travaux pratiques et projets<br />
+                • Gestion de projets pédagogiques et collaborations techniques
+            </p>
+        </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section class="section" id="skills">
+        <h2 class="section-title">⚙️ Compétences</h2>
+        <div class="tags-container">
+            <span class="tag">Laravel</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Java</span>
+            <span class="tag">Docker</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Linux</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Sécurité Réseaux</span>
+            <span class="tag">Git & GitHub</span>
+        </div>
+    </section>
+
+    <!-- OBJECTIFS -->
+    <section class="section">
+        <h2 class="section-title">🚀 Objectifs & Vision</h2>
+        <div class="section-content">
+            <p>
+                Mon objectif est de devenir un <strong>ingénieur en informatique polyvalent</strong>,
+                capable d'intégrer des solutions intelligentes et sécurisées dans le monde professionnel.
+            </p>
+            <p>
+                Je souhaite approfondir mes compétences en cybersécurité, développement backend
+                avancé, administration système et intelligence artificielle.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <h2 class="section-title">📫 Me contacter</h2>
+        <div class="contact-section">
+            <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <a href="mailto:rafikaitichou@gmail.com" class="contact-link">rafikaitichou@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/RAFIKAITICHOU" target="_blank" class="contact-link">RAFIKAITICHOU</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/rafik-ait-ichou/" target="_blank"
+                    class="contact-link">rafik-ait-ichou</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-divider"></div>
+        <p>&copy; 2025 AIT ICHOU Rafik • Ingénieur en Informatique</p>
+    </footer>
 
 </body>
+
 </html>
