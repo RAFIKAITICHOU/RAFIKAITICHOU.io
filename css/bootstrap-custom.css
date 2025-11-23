@@ -1,0 +1,127 @@
+/* Personnalisations Bootstrap pour le thème sombre */
+
+:root {
+    --primary-dark: #0a0e27;
+    --secondary-dark: #1a1f3a;
+    --accent-blue: #00d4ff;
+    --accent-cyan: #0099ff;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+}
+
+/* Cards */
+.card {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-blue);
+    background: rgba(0, 212, 255, 0.05);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.08);
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--accent-blue);
+}
+
+.card-subtitle {
+    color: var(--text-secondary) !important;
+}
+
+.card-text {
+    color: var(--text-secondary);
+}
+
+/* Navbar */
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 212, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Améliorations pour les petits écrans */
+@media (max-width: 768px) {
+    .hero-section .row {
+        text-align: center;
+    }
+
+    .section-title {
+        justify-content: center;
+    }
+
+    .tags-container {
+        justify-content: center;
+    }
+}
+
+/* Personnalisation supplémentaire pour les modals */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-backdrop.show {
+    opacity: 0.8;
+}
+
+/* Amélioration de l'accessibilité */
+.clickable-photo:focus {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+/* Animation de pulse pour attirer l'attention sur la photo */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* Personnalisation des boutons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    border: none;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Styles pour les formulaires */
+.form-control {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    background: rgba(26, 31, 58, 0.8);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
+    color: var(--text-primary);
+}
