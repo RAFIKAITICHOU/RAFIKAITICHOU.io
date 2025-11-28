@@ -12,6 +12,7 @@
 /* Styles généraux */
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
@@ -22,6 +23,15 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Structure principale */
+.main-content {
+    flex: 1 0 auto;
+    width: 100%;
 }
 
 /* NAVIGATION */
@@ -301,7 +311,7 @@ a:hover::after {
     word-break: break-all;
 }
 
-/* FOOTER */
+/* FOOTER - CORRIGÉ POUR ÊTRE TOUJOURS EN BAS */
 .footer-section {
     padding: 3rem 0;
     text-align: center;
@@ -309,6 +319,9 @@ a:hover::after {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.9rem;
+    margin-top: auto;
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .footer-divider {
@@ -629,4 +642,130 @@ a:hover::after {
     50% {
         transform: translate3d(0, -15px, 0);
     }
+}
+
+/* Correction pour les pages individuelles */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+    padding-top: 80px;
+    /* Compensation pour la navbar fixe */
+}
+
+/* Assurer que le footer reste en bas même sur les pages courtes */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-main {
+    flex: 1 0 auto;
+}
+
+/* Styles pour les certifications */
+.certification-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.certification-item:hover {
+    background: rgba(0, 212, 255, 0.05);
+    border-color: var(--accent-blue);
+    transform: translateX(5px);
+}
+
+.certification-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    flex: 1;
+}
+
+.certification-link:hover {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.text-accent-blue {
+    color: var(--accent-blue) !important;
+}
+
+/* Styles pour les compétences organisées */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.2rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 255, 0.05) 100%);
+    border: 1px solid var(--accent-blue);
+    border-radius: 25px;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 153, 255, 0.15) 100%);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Styles pour la page contact */
+.contact-item {
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
+}
+
+.contact-icon {
+    color: var(--accent-blue);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1);
+    color: var(--accent-cyan);
+}
+
+.contact-info {
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.contact-link {
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: none;
+}
+
+.text-accent-blue {
+    color: var(--accent-blue) !important;
 }
