@@ -769,3 +769,23 @@ body {
 .text-accent-blue {
     color: var(--accent-blue) !important;
 }
+/* ===== Ligne active sous ICHOU.R ===== */
+.navbar-brand {
+    position: relative;
+}
+
+.navbar-brand::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+/* Affichage permanent pour Index */
+.navbar-brand.active::after {
+    width: 100%;
+}
