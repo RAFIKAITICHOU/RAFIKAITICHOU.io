@@ -374,3 +374,31 @@ function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('fr-FR', options);
 }
+function setLanguagePreference(lang) {
+    localStorage.setItem('preferred-language', lang);
+    return lang;
+}
+
+function getLanguagePreference() {
+    return localStorage.getItem('preferred-language') ||
+        navigator.language.split('-')[0] ||
+        'fr';
+}
+
+// Redirection basée sur la préférence
+function redirectToPreferredLanguage() {
+    const preferredLang = getLanguagePreference();
+    const currentPath = window.location.pathname;
+
+    // Si on est à la racine et pas déjà dans la bonne langue
+    if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+        if (preferredLang === 'en' && !currentPath.includes('/en/')) {
+            window.location.href = 'en/index.html';
+        } else if (preferredLang === 'fr' && currentPath.includes('/en/')) {
+            window.location.href = '../index.html';
+        }
+    }
+}
+
+// Appeler au chargement
+document.addEventListener('DOMContentLoaded', redirectToPreferredLanguage);

@@ -769,6 +769,7 @@ body {
 .text-accent-blue {
     color: var(--accent-blue) !important;
 }
+
 /* ===== Ligne active sous ICHOU.R ===== */
 .navbar-brand {
     position: relative;
@@ -788,4 +789,225 @@ body {
 /* Affichage permanent pour Index */
 .navbar-brand.active::after {
     width: 100%;
+}
+
+/* ============================================
+   GESTION BILINGUE FR/EN
+   ============================================ */
+
+/* Style pour le sélecteur de langue */
+.language-switcher {
+    margin-left: 1rem;
+}
+
+.dropdown-menu {
+    background: rgba(26, 31, 58, 0.95);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.dropdown-item {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent-blue);
+}
+
+.dropdown-item.active {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--accent-blue);
+    font-weight: 500;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Indicateur visuel de langue active */
+.current-lang {
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+/* Animation pour le changement de langue */
+@keyframes languageFade {
+    from {
+        opacity: 0.7;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Appliquer l'animation au contenu lors du changement de langue */
+body[data-lang-change="true"] .section-content,
+body[data-lang-change="true"] .card,
+body[data-lang-change="true"] .project-card {
+    animation: languageFade 0.5s ease-out;
+}
+
+/* Style spécifique pour la version anglaise */
+html[lang="en"] body {
+    /* Aucun changement de style, seulement pour référence */
+}
+
+/* Style spécifique pour la version française */
+html[lang="fr"] body {
+    /* Aucun changement de style, seulement pour référence */
+}
+
+/* Badge pour indiquer la langue (optionnel) */
+.lang-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--accent-blue);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    backdrop-filter: blur(10px);
+    display: none;
+    /* Masqué par défaut */
+}
+
+/* Afficher le badge en développement */
+.development-mode .lang-badge {
+    display: block;
+}
+
+/* Responsive pour le sélecteur de langue */
+@media (max-width: 991px) {
+    .language-switcher {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .dropdown-menu {
+        background: rgba(10, 14, 39, 0.95);
+    }
+}
+
+/* Animation pour le drapeau */
+@keyframes flagWave {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+.fa-globe {
+    animation: flagWave 3s ease-in-out infinite;
+}
+
+/* Transition douce pour le changement de contenu */
+.language-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Cache les éléments pendant le changement de langue */
+.language-changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Style pour le dropdown sur mobile */
+@media (max-width: 768px) {
+    .navbar-nav .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .navbar-nav .dropdown-item {
+        padding-left: 2rem;
+        color: var(--text-secondary);
+    }
+
+    .navbar-nav .dropdown-item.active {
+        color: var(--accent-blue);
+    }
+}
+
+/* Amélioration de l'accessibilité pour le sélecteur de langue */
+.dropdown-toggle:focus {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* État hover pour le sélecteur de langue */
+.nav-link.dropdown-toggle:hover {
+    color: var(--accent-blue) !important;
+}
+
+/* Style pour l'indicateur de langue active dans la navbar */
+.navbar-nav .nav-item.dropdown .nav-link.active {
+    color: var(--accent-blue) !important;
+}
+
+/* Animation de transition entre les pages */
+.page-transition {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Cache les éléments pendant le chargement de la langue */
+.language-loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.language-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--accent-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }

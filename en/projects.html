@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/logoo.jpg" />
+    <title>Projects - AIT ICHOU Rafik</title>
+    <meta name="keywords" content="AIT ICHOU Rafik, IT projects, web development, Laravel, machine learning, portfolio">
+    <meta name="description"
+        content="Projects developed by AIT ICHOU Rafik - Absence management system, e-commerce platform, machine learning">
+    <meta name="author" content="AIT ICHOU Rafik">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/bootstrap-custom.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ICHOU.R</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="formation.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="certifications.html">Certifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="experience.html">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="objectives.html">Objectives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i>EN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="../index.html">Français</a></li>
+                            <li><a class="dropdown-item active" href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="section-title"><i class="fas fa-folder me-2"></i>Projects</h1>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-qrcode me-2"></i>Intelligent Absence Management System – absENS
+                                (ENS Marrakech)
+                            </h5>
+
+                            <p class="card-text">
+                                Intelligent solution developed during an internship at ENS Marrakech, integrating a
+                                web application,
+                                an Android mobile application and a Raspberry Pi module to automate absence management
+                                via
+                                QR Codes and computer vision (OpenCV). Complete, fast, secure and multi-role
+                                system (Student – Teacher – Administration).
+                            </p>
+
+                            <ul class="tech-list">
+                                <li><strong>Backend:</strong> PHP / Laravel, MySQL, API REST (Sanctum)</li>
+                                <li><strong>Frontend:</strong> HTML/CSS/JS, Bootstrap, FullCalendar, Chart.js</li>
+                                <li><strong>Mobile:</strong> Android (Java)</li>
+                                <li><strong>Hardware:</strong> Raspberry Pi + Camera, OpenCV</li>
+                            </ul>
+
+                            <!-- Project links -->
+                            <div class="project-links mt-3">
+                                <a href="https://github.com/RAFIKAITICHOU/Gestion-absence-ENS"
+                                    class="project-link me-3">
+                                    <i class="fas fa-external-link-alt me-1"></i>View project
+                                </a>
+
+                                <a href="https://drive.google.com/file/d/19eoYorQPimVH6lmmgELYJKr7TIFKw5rC/view?usp=sharing"
+                                    class="project-link video-demo-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-play-circle me-1"></i>Video demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-ring me-2"></i>Ring Sizer – Mobile Application (Jewelry)
+                            </h5>
+
+                            <p class="card-text">
+                                Android mobile application developed with Flutter to calculate ring and bracelet sizes,
+                                track gold prices in real-time and browse a jewelry catalog.
+                                A secure Laravel backend allows the administrator to manage products via a
+                                REST API.
+                            </p>
+
+                            <ul class="tech-list">
+                                <li><strong>Mobile:</strong> Flutter (Android)</li>
+                                <li><strong>Backend:</strong> Laravel, API REST, Sanctum</li>
+                                <li><strong>Database:</strong> MySQL</li>
+                                <li><strong>External API:</strong> Metals.live (gold spot price), ExchangeRate-API &
+                                    Open
+                                    ER-API (exchange rates) with local fallback</li>
+                            </ul>
+
+                            <!-- Project links -->
+                            <div class="project-links mt-3">
+                                <a href="https://github.com/RAFIKAITICHOU/Ring-Sizer" class="project-link me-3">
+                                    <i class="fas fa-external-link-alt me-1"></i>View project
+                                </a>
+
+                                <a href="#" class="project-link video-demo-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-play-circle me-1"></i>Video demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-boxes me-2"></i>SmartStock – Desktop Inventory Management Application
+                            </h5>
+
+                            <p class="card-text">
+                                Java desktop application developed for internal store inventory management.
+                                It allows managing products, suppliers and supply orders,
+                                with automatic stock updates, low stock alerts and secure
+                                authentication.
+                                Modular architecture based on MVC and DAO.
+                            </p>
+
+                            <ul class="tech-list">
+                                <li><strong>Language:</strong> Java</li>
+                                <li><strong>Interface:</strong> JavaFX (FXML)</li>
+                                <li><strong>Architecture:</strong> MVC, DAO, Service</li>
+                                <li><strong>Database:</strong> MySQL (JDBC)</li>
+                                <li><strong>Tools:</strong> Maven, IntelliJ IDEA</li>
+                            </ul>
+
+                            <!-- Project links -->
+                            <div class="project-links mt-3">
+                                <a href="https://github.com/RAFIKAITICHOU/SmartStock" class="project-link me-3">
+                                    <i class="fas fa-external-link-alt me-1"></i>View project
+                                </a>
+
+                                <a href="#" class="project-link video-demo-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-play-circle me-1"></i>Video demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-coins me-2"></i>Business Budget Management – Web Application
+                            </h5>
+
+                            <p class="card-text">
+                                Complete web application allowing businesses to manage their budgets, track expenses,
+                                collaborate between administrators and accountants, and generate automatic reports.
+                                Developed in ASP.NET Core 10, Entity Framework and MySQL with a modern responsive
+                                interface.
+                            </p>
+
+                            <ul class="tech-list">
+                                <li><strong>Frontend:</strong> HTML5, CSS3, Bootstrap 5, JavaScript</li>
+                                <li><strong>Backend:</strong> ASP.NET Core 10, C#, EF Core</li>
+                                <li><strong>Database:</strong> MySQL</li>
+                            </ul>
+                            <div class="project-links mt-3">
+                                <a href="https://github.com/RAFIKAITICHOU/gestion-de-d-penses-et-de-budget-d-entreprise"
+                                    class="project-link me-3">
+                                    <i class="fas fa-external-link-alt me-1"></i>View project
+                                </a>
+                                <a href="#" class="project-link video-demo-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-play-circle me-1"></i>Video demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-shopping-cart me-2"></i>One Click – Responsive E-commerce Platform
+                            </h5>
+
+                            <p class="card-text">
+                                Development of a complete and modern e-commerce platform with Laravel: product and
+                                order management, automatic stock synchronization, administrator/customer roles,
+                                various payment methods and statistical dashboard with charts. 100% responsive
+                                interface.
+                            </p>
+
+                            <ul class="tech-list">
+                                <li><strong>Frontend:</strong> HTML5, CSS3, JS, Bootstrap</li>
+                                <li><strong>Backend:</strong> PHP 8+, Laravel, Blade, Spatie Permissions</li>
+                                <li><strong>Database:</strong> MySQL</li>
+                                <li><strong>Other:</strong> Chart.js, Composer, XAMPP</li>
+                            </ul>
+
+                            <!-- Project links -->
+                            <div class="project-links mt-3">
+                                <a href="https://github.com/RAFIKAITICHOU/Plateforme-E-commerce"
+                                    class="project-link me-3">
+                                    <i class="fas fa-external-link-alt me-1"></i>View project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-search-dollar me-2"></i>Job Offers Management
+                            </h5>
+
+                            <p class="card-text">
+                                Web application allowing companies to publish and manage job offers,
+                                candidates to apply online, and administrators to analyze statistics
+                                via interactive charts. Project designed to digitize and automate the
+                                recruitment process.
+                            </p>
+
+                            <ul class="tech-list">
+                                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, AJAX, Bootstrap, Chart.js</li>
+                                <li><strong>Backend:</strong> Java, Hibernate, JPA, JDBC</li>
+                                <li><strong>Database:</strong> MySQL</li>
+                                <li><strong>Concepts:</strong> MVC, REST API</li>
+                            </ul>
+
+                            <!-- Project links -->
+                            <div class="project-links mt-3">
+                                <a href="https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi"
+                                    class="project-link me-3">
+                                    <i class="fas fa-external-link-alt me-1"></i>View project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-robot me-2"></i>Spam/Ham Classification System –
+                                Machine Learning</h5>
+                            <p class="card-text">
+                                Implementation of an ML spam detection model based on DecisionTreeClassifier,
+                                Bag-of-Words vectorization and performance evaluation.
+                            </p>
+                            <a href="#" class="project-link">View project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 project-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-globe me-2"></i>Responsive Personal Portfolio</h5>
+                            <p class="card-text">
+                                Development of a modern portfolio in HTML/CSS/JS with animations,
+                                advanced SEO and mobile optimization.
+                            </p>
+                            <a href="#" class="project-link">View project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <div class="footer-divider"></div>
+            <p>&copy; 2025 AIT ICHOU Rafik • Computer and Networks Engineer</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
